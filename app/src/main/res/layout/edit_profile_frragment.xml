@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <!--  Name Label -->
+        <EditText android:id="@+id/nameUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:hint="Change Name" />
+
+        <!-- Phone Label -->
+        <EditText android:id="@+id/phoneNoUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:hint="Change Phone No"/>
+
+        <!-- Phone Label -->
+        <EditText android:id="@+id/emailUpdate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:inputType="phone"
+            android:hint="Change Email"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_update_details"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:padding="12dp"
+            android:text="Update Details"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:text="Update Your Password"
+            />
+
+        <EditText android:id="@+id/currentPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:hint="Old Password"/>
+
+        <EditText android:id="@+id/newPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:hint="New Password"/>
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_change_password"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:padding="12dp"
+            android:text="Update Password"/>
+    </LinearLayout>
+</ScrollView>

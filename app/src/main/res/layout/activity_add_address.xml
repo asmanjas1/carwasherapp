@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="carwasher.com.carwasher.AddAddressActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="1dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btnGPSShowLocation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:padding="12dp"
+            android:text="Use My Current Location" />
+
+        <!--  Pincode Label -->
+        <EditText android:id="@+id/address_pincode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Pincode" />
+
+        <!--  Address Line Label -->
+        <EditText android:id="@+id/address_addressLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Flat/House No./Floor/Building" />
+
+        <!--  locality Label -->
+        <EditText android:id="@+id/address_locality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Colony/Street/Locality" />
+
+        <!--  Landmark Label -->
+        <EditText android:id="@+id/address_landmark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Landmark" />
+
+        <!--  City Label -->
+        <EditText android:id="@+id/address_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="City" />
+
+        <!--  State Label -->
+        <EditText android:id="@+id/address_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="State" />
+
+        <Button
+            android:id="@+id/btn_add_address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginBottom="7dp"
+            android:padding="12dp"
+            android:text="Add address" />
+
+    </LinearLayout>
+</ScrollView>

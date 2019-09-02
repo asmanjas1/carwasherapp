@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "437461815939",
+    "firebase_url": "https://carproject-248212.firebaseio.com",
+    "project_id": "carproject-248212",
+    "storage_bucket": "carproject-248212.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437461815939:android:b9bb342d17e2567f",
+        "android_client_info": {
+          "package_name": "carwasher.com.carwasher"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437461815939-h5rbvkpl7395roamgahnk02chvh79lko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGmEIOwxqDV3kYAwpZYhf0oh03y1ovs4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437461815939-h5rbvkpl7395roamgahnk02chvh79lko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:437461815939:android:383e8ee5343397f8",
+        "android_client_info": {
+          "package_name": "studio.carwash.com.carwash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "437461815939-asl1alkmuphvua265dsdkv4us0g1aks2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "studio.carwash.com.carwash",
+            "certificate_hash": "662b83732877526126748ad1815bb98b7f07edd5"
+          }
+        },
+        {
+          "client_id": "437461815939-h5rbvkpl7395roamgahnk02chvh79lko.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGmEIOwxqDV3kYAwpZYhf0oh03y1ovs4w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "437461815939-h5rbvkpl7395roamgahnk02chvh79lko.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
