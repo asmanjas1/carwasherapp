@@ -47,4 +47,7 @@ public interface RestInvokerService {
 
     @PUT("/orderController/completeOrderByOrderId/{orderId}/{consumerId}")
     Call<Map<String, Object>> completeOrderByOrderId(@Path("orderId") Integer orderId,@Path("consumerId") Integer consumerId);
+
+    @GET("/carwasherController/doLoginByNumber/{phoneNumber}")
+    Call<Map<String, Object>> doLoginByNumber(@Path("phoneNumber") String phoneNumber);
 }

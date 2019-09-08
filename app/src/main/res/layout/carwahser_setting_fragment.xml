@@ -26,16 +26,6 @@
         android:layout_marginTop="50dp"
         android:textSize="18sp"/>
 
-    <TextView
-        android:id="@+id/tempID2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:text="Call us: 9742236575"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="80dp"
-        android:textSize="18sp"/>
-
     <Button
         android:id="@+id/btn_contact_us_email"
         android:layout_width="wrap_content"
@@ -46,18 +36,10 @@
         android:text="Send Mail" />
 
     <Button
-        android:id="@+id/btn_contact_us_call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_contact_us_email"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:text="Call Us" />
-    <Button
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_contact_us_call"
+        android:layout_below="@+id/btn_contact_us_email"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="100dp"

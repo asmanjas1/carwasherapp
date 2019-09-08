@@ -13,43 +13,69 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-
-        <!--  Name Label -->
-            <EditText android:id="@+id/input_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textCapWords"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:hint="Name" />
-
-        <!-- Email Label -->
-            <EditText android:id="@+id/input_email"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:hint="Email" />
-
-        <!-- Phone Number Label -->
-        <EditText android:id="@+id/input_phoneNumber"
+        <EditText android:id="@+id/input_phoneNumberOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Contact Number"/>
+        <EditText android:id="@+id/input_otp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:hint="Contact Number"/>
+            android:hint="Enter otp"/>
+        <Button
+            android:id="@+id/btn_sendOtp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:text="Send Otp"/>
+        <Button
+            android:id="@+id/btn_verifyOtp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="12dp"
+            android:text="Verify Otp"/>
 
+        <TextView android:id="@+id/textViewDetailsMsg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Please provide valid details."
+            android:textSize="16dip"/>
+
+        <!--  Name Label -->
+        <EditText android:id="@+id/input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Name" />
+
+        <!-- Email Label -->
+        <EditText android:id="@+id/input_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Email" />
 
         <!-- Password Label -->
-            <EditText android:id="@+id/input_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:hint="Password"/>
+        <EditText android:id="@+id/input_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Password"/>
 
         <!-- Confirm Password Label -->
         <EditText android:id="@+id/input_confirmPassword"

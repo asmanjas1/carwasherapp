@@ -11,8 +11,47 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="56dp"
-        android:layout_margin="30px"
+        android:layout_margin="40px"
         android:scrollbarThumbVertical="@color/colorAccent">
+
+        <EditText android:id="@+id/input_phoneNumberOtp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Contact Number"/>
+        <EditText android:id="@+id/input_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:hint="Enter otp"/>
+        <Button
+            android:id="@+id/btn_sendOtp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:text="Send Otp"/>
+        <Button
+            android:id="@+id/btn_verifyOtp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:padding="12dp"
+            android:text="Verify Otp"/>
+
+        <TextView android:id="@+id/link_useEmailForLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"
+            android:text="Click here to login with email/Password"
+            android:gravity="center"
+            android:textSize="16dip"/>
 
         <EditText android:id="@+id/input_email"
             android:layout_width="match_parent"
@@ -34,6 +73,16 @@
             android:layout_marginBottom="24dp"
             android:padding="12dp"
             android:text="Login"/>
+
+        <TextView android:id="@+id/link_useOtpForLogin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"
+            android:text="Click here to login with Otp"
+            android:gravity="center"
+            android:textSize="16dip"/>
+
 
         <TextView android:id="@+id/link_signup"
             android:layout_width="fill_parent"

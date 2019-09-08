@@ -20,8 +20,7 @@ import resources.SaveSharedPreference;
 public class ConsumerSettingFragment extends Fragment {
 
     private static final String CONTACT_EMAIL = "asmanjaskumar@gmail.com";
-    private static final String CONTACT_PHONE = "9742236575";
-    Button logOutButton,btn_Call, btn_Email;
+    Button logOutButton, btn_Email;
 
     public static ConsumerSettingFragment newInstance() {
         ConsumerSettingFragment fragment;
@@ -42,7 +41,6 @@ public class ConsumerSettingFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.carwahser_setting_fragment, container, false);
         logOutButton= (Button) v.findViewById(R.id.btn_logout);
-        btn_Call= (Button) v.findViewById(R.id.btn_contact_us_call);
         btn_Email= (Button) v.findViewById(R.id.btn_contact_us_email);
 
         logOutButton.setOnClickListener(new View.OnClickListener() {
@@ -65,13 +63,6 @@ public class ConsumerSettingFragment extends Fragment {
             }
         });
 
-        btn_Call.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+CONTACT_PHONE));
-                startActivity(intent);
-            }
-        });
         return v;
     }
 }
