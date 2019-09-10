@@ -12,10 +12,14 @@ import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,6 +52,9 @@ public class AddAddressActivity extends AppCompatActivity {
     Button btnGPS;
     @InjectView(R.id.btn_add_address) Button btnAddAddress;
 
+    TextView textViewAddressLine,textViewAddressLocalityLandmark,textViewAddressTotal,textViewAdressStatus,textViewCurrentAdd;
+    CardView currentAddressCardView;
+
     GPSTracker gps;
     private static final int REQUEST_CODE_PERMISSION = 2;
     String mPermission = android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -59,6 +66,24 @@ public class AddAddressActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_address);
         ButterKnife.inject(this);
         setGPSTrackerValues();
+        textViewAddressLine = (TextView) findViewById(R.id.textViewAddressLine);
+        textViewAddressLocalityLandmark = (TextView) findViewById(R.id.textViewAddressLocalityLandmark);
+        textViewAddressTotal = (TextView) findViewById(R.id.textViewAddressTotal);
+        textViewAdressStatus = (TextView) findViewById(R.id.textViewAdressStatus);
+        textViewCurrentAdd = (TextView) findViewById(R.id.textViewCurrentAdd);
+        currentAddressCardView = (CardView) findViewById(R.id.currentAddressCardView);
+
+        Carwasher carwasher =  SaveSharedPreference.getCarwasherFromGson(this);
+        CarwasherAddress address = carwasher.getCarwasherAddress();
+        if(address != null){
+            textViewAddressLine.setText(address.getAddressLine());
+            textViewAddressLocalityLandmark.setText(address.getLocality());
+            textViewAddressTotal.setText(address.getCity()+" "+address.getState()+" "+address.getPincode());
+        } else {
+            textViewAdressStatus.setVisibility(View.GONE);
+            currentAddressCardView.setVisibility(View.GONE);
+            textViewCurrentAdd.setText("Please add address to use our service!");
+        }
         btnAddAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,6 +122,7 @@ public class AddAddressActivity extends AppCompatActivity {
                     String ss = map.get("data").toString();
                     SaveSharedPreference.setCarwasherObj(AddAddressActivity.this, ss);
                     Toast.makeText(getBaseContext(), "Address Added Successfully.", Toast.LENGTH_LONG).show();
+                    finish();
                 } else {
                     progressDialog.dismiss();
                     Toast.makeText(getBaseContext(), "Error adding in vehicle.", Toast.LENGTH_LONG).show();
@@ -234,7 +260,7 @@ public class AddAddressActivity extends AppCompatActivity {
                 addressCity.setText(ad.getLocality());
                 addressState.setText(ad.getAdminArea());
                 String locality = ad.getAddressLine(0);
-                String locality1 = locality.substring(0,locality.indexOf(ad.getLocality())-1);
+                String locality1 = locality.substring(0,locality.indexOf(ad.getLocality())-2);
                 addressLocality.setText(locality1);
                 list.add(ad.getLocality());
                 list.add(ad.getCountryCode());
