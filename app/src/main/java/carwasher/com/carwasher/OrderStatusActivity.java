@@ -95,9 +95,9 @@ public class OrderStatusActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                 Map<String, Object> map = response.body();
-                Log.d("akskasasaoiqkxnwq xwqk",map.toString());
                 if( map.get("resCode").equals(200.0)){
                     String ss = map.get("data").toString();
+                    Log.d("asnasnas",ss);
                     Orders orders = gson.fromJson(ss, Orders.class);
                     setAllFields(orders);
                 } else {
@@ -114,6 +114,21 @@ public class OrderStatusActivity extends AppCompatActivity {
     }
 
     public void setAllFields(Orders orders){
+        Carwasher carwasher = SaveSharedPreference.getCarwasherFromGson(this);
+        Carwasher orderCarwashher = orders.getCarwasher();
+        if( orderCarwashher != null){
+            Integer orderCarwashherID = orderCarwashher.getCarwasherId();
+            if( orderCarwashherID != null){
+                if( !carwasher.getCarwasherId().equals(orderCarwashherID)){
+                    Toast.makeText(getApplicationContext(),"Order is already accepted by other person..",Toast.LENGTH_SHORT).show();
+                    finish();
+                    return;
+                }
+            }
+        }
+
+
+
         String orderStatus = null;
         if(orders != null){
             orderStatus = orders.getOrderStatus();
@@ -165,8 +180,6 @@ public class OrderStatusActivity extends AppCompatActivity {
             orderStatusOrderActions.setVisibility(View.VISIBLE);
         }
 
-        Carwasher carwasher = SaveSharedPreference.getCarwasherFromGson(this);
-
         if( orderStatus != null && orderStatus.equals("In Progress")){
             textViewOrderStatusOrderActions.setText("Finish Order.");
             textViewOrderStatusOrderActions.setOnClickListener(new View.OnClickListener() {
@@ -201,7 +214,6 @@ public class OrderStatusActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                 Map<String, Object> map = response.body();
-                Log.d("akskasasawefvsvsd",map.toString());
                 if( map.get("resCode").equals(200.0)){
                     Boolean  flag = (Boolean) map.get("data");
                     if(flag){
@@ -226,7 +238,6 @@ public class OrderStatusActivity extends AppCompatActivity {
     public void updateOrderAccepted(Integer carwasherId, Integer consumerId){
         final ProgressDialog progressDialog1 =  CarConstant.getProgressDialog(this,"Processing Order...");
         progressDialog1.show();
-        Log.d("akskasasausbkjacsacm, s",orderId +" "+carwasherId+" "+consumerId);
         RestInvokerService restInvokerService = RestClient.getClient().create(RestInvokerService.class);
 
         Call<Map<String, Object>> call = restInvokerService.confirmOrderByCarwasher(orderId,carwasherId,consumerId);
@@ -234,7 +245,6 @@ public class OrderStatusActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Map<String, Object>> call, Response<Map<String, Object>> response) {
                 Map<String, Object> map = response.body();
-                Log.d("akskasasausbkjacsacm, s",map.toString());
                 if( map.get("resCode").equals(200.0)){
                     Boolean  flag = (Boolean) map.get("data");
                     if(flag){
